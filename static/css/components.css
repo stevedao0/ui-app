@@ -456,7 +456,7 @@
 
 .table-actions {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .table-wrapper {
@@ -1348,7 +1348,7 @@ th.sort-desc .sort-indicator::after {
 }
 
 .card-header {
-  padding: var(--space-8);
+  padding: var(--space-5) var(--space-6);
   border-bottom: 2px solid transparent;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%);
   position: relative;
@@ -1381,13 +1381,13 @@ th.sort-desc .sort-indicator::after {
 }
 
 .card-body {
-  padding: var(--space-8);
+  padding: var(--space-6);
   position: relative;
   z-index: 1;
 }
 
 .card-footer {
-  padding: var(--space-8);
+  padding: var(--space-6);
   border-top: 2px solid transparent;
   background: linear-gradient(to bottom, rgba(249, 250, 251, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
   position: relative;
