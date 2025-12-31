@@ -1,14 +1,16 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .table thead {
   background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 50%, white 100%);
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(90deg, var(--primary-400), var(--info-400), var(--secondary-400)) 1;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .table thead::after {
@@ -33,6 +35,13 @@
   position: relative;
   transition: all var(--transition-base);
   line-height: 1.5;
+  vertical-align: middle;
+}
+
+.table th > div {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .table th::after {
@@ -106,6 +115,10 @@
   border-right: 1px solid transparent;
   transition: all var(--transition-base);
   line-height: 1.6;
+  vertical-align: middle;
+  max-width: 350px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .table tbody tr:hover td {
@@ -174,6 +187,37 @@
 .empty-state-description {
   font-size: var(--text-base);
   color: var(--text-tertiary);
+}
+
+.table-wrapper,
+.data-table-container {
+  overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-6);
+}
+
+.table-wrapper::-webkit-scrollbar,
+.data-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track,
+.data-table-container::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb,
+.data-table-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary-400), var(--info-400));
+  border-radius: var(--radius-full);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover,
+.data-table-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--primary-500), var(--info-500));
 }
 
 .table-container {
