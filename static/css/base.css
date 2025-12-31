@@ -17,9 +17,36 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--text-primary);
-  background: linear-gradient(135deg, #F9FAFB 0%, #EFF6FF 50%, #E0F2FE 100%);
+  background: var(--bg-page);
   background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 107, 161, 0.3), transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(102, 126, 234, 0.2), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
